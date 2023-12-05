@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "React-Shop.Server", "React-Shop.Server\React-Shop.Server.csproj", "{CEF7B481-BE5B-4A02-A0A5-FE6E3C12B8B9}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "react-shop.client", "react-shop.client\react-shop.client.esproj", "{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "React-Shop.Database", "React-Shop.Database", "{1B0B292F-2C0D-42CE-8AAA-2377ADFA039A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "React-Shop.Database\Data\Data.csproj", "{218D7165-B993-4BFA-A3C6-EF6A72A74F26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "React-Shop.Infrastructure", "React-Shop.Infrastructure", "{88D74344-09E3-4D8A-A1C0-A3D151DE6CAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "React-Shop.Infrastructure\Infrastructure\Infrastructure.csproj", "{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "React-Shop.Services", "React-Shop.Services", "{28D3B0DE-E863-46DC-99D3-4DB8EE209D12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "React-Shop.Services\Services\Services.csproj", "{DDF038F4-81F1-479D-B7E8-6513F26035DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEF7B481-BE5B-4A02-A0A5-FE6E3C12B8B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF7B481-BE5B-4A02-A0A5-FE6E3C12B8B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF7B481-BE5B-4A02-A0A5-FE6E3C12B8B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF7B481-BE5B-4A02-A0A5-FE6E3C12B8B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDC00F0-1FB0-49F0-B101-91C4D0D60D44}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{218D7165-B993-4BFA-A3C6-EF6A72A74F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218D7165-B993-4BFA-A3C6-EF6A72A74F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218D7165-B993-4BFA-A3C6-EF6A72A74F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218D7165-B993-4BFA-A3C6-EF6A72A74F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF038F4-81F1-479D-B7E8-6513F26035DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF038F4-81F1-479D-B7E8-6513F26035DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF038F4-81F1-479D-B7E8-6513F26035DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF038F4-81F1-479D-B7E8-6513F26035DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{218D7165-B993-4BFA-A3C6-EF6A72A74F26} = {1B0B292F-2C0D-42CE-8AAA-2377ADFA039A}
+		{9FC327DB-3BE3-4509-B44E-1D3BAE1A05AE} = {88D74344-09E3-4D8A-A1C0-A3D151DE6CAA}
+		{DDF038F4-81F1-479D-B7E8-6513F26035DE} = {28D3B0DE-E863-46DC-99D3-4DB8EE209D12}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B459A2A2-9C90-4685-9E0C-8064701AB90D}
+	EndGlobalSection
+EndGlobal
