@@ -22,10 +22,9 @@
     <ProjectReference Include="..\react-shop.client\react-shop.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\React-Shop.Database\Data\Data.csproj" />
+    <ProjectReference Include="..\React-Shop.Infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\React-Shop.Services\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>
