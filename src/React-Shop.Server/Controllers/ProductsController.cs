@@ -1,34 +1,42 @@
 ﻿namespace React_Shop.Server.Controllers
 {
-    using Infrastructure.Models;
     using Microsoft.AspNetCore.Mvc;
-    using Services;
+    using React_Shop.Server.Models;
+    using React_Shop.Server.Queries;
 
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController(IProductService productService) : ControllerBase
+    public class ProductsController : AbstractController
     {
-        private readonly IProductService _productService = productService;
-
         [HttpGet]
         public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
         {
-            var prducts = await _productService.GetAllAsync(cancellationToken);
-            return Ok(prducts);
+            var query = new GetProductsQuery();
+            var result = await Mediator.Send(query, cancellationToken);
+            if (!result.IsSuccess)
+            {
+                return CreateErrorResult(result);
+            }
+
+            return Ok(result.Data);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductModel product, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create(ProductApiModel product, CancellationToken cancellationToken)
         {
-            var result = await _productService.CreateAsync(product, cancellationToken);
-            return Ok(result);
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ProductApiModel product, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id, CancellationToken cancellationToken)
         {
-            var result = await _productService.DeleteAsync(id, cancellationToken);
-            return Ok(result);
+            throw new NotImplementedException();
         }
     }
 }
