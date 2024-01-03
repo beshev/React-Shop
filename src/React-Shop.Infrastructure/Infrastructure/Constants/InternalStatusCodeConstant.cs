@@ -2,7 +2,7 @@
 {
     using System.Net;
 
-    public static class InternalStatusCodesConstant
+    public static class InternalStatusCodeConstant
     {
         public const int Success = (int)HttpStatusCode.OK;
 

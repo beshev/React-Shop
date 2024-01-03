@@ -2,5 +2,6 @@
 {
     public class ProductApiModel
     {
+        public string Name { get; set; }
     }
 }

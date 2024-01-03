@@ -7,10 +7,9 @@
 
     public class AbstractController : ControllerBase
     {
-        protected readonly IMediator _mediator;
-        
-        // TODO: double-check this
-        public IMediator Mediator => _mediator ?? HttpContext.RequestServices.GetRequiredService<IMediator>();
+        protected IMediator _mediator;
+
+        public IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
 
         protected IActionResult CreateErrorResult<T>(InternalResult<T> result)
         {
@@ -19,10 +18,10 @@
 
             return result.Code switch
             {
-                InternalStatusCodesConstant.NotFound => NotFound(),
-                InternalStatusCodesConstant.NoContent => NoContent(),
-                InternalStatusCodesConstant.BadRequest => BadRequest(error),
-                _ => StatusCode(InternalStatusCodesConstant.InternalServerError, error),
+                InternalStatusCodeConstant.NotFound => NotFound(),
+                InternalStatusCodeConstant.NoContent => NoContent(),
+                InternalStatusCodeConstant.BadRequest => BadRequest(error),
+                _ => StatusCode(InternalStatusCodeConstant.InternalServerError, error),
             };
         }
     }
