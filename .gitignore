@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /src/React-Shop.Server/appsettings.Development.json
+/src/React-Shop.Server/Resources/Images
