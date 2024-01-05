@@ -23,6 +23,8 @@
         public override Task<ProductEntity> InsertAsync(ProductEntity product, CancellationToken cancellationToken)
         {
             product.CreatedOn = DateTime.UtcNow;
+            product.UpdatedOn = DateTime.UtcNow;
+
             return base.InsertAsync(product, cancellationToken);
         }
 

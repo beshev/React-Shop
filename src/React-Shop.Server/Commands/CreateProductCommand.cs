@@ -7,7 +7,7 @@
 
     public class CreateProductCommand : IValidatable<ProductModel>
     {
-        public ProductModel Product { get; set; }
+        public ProductCreateModel Product { get; set; }
 
         public ErrorContext ErrorContext => new(CommonMessageConstants.CreateProducRequestFailed);
     }

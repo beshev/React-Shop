@@ -1,13 +1,18 @@
 ﻿namespace Infrastructure.Models
 {
     using System;
+    using System.Collections.Generic;
 
-    public class ProductModel
+    public class ProductModel : ProductBaseModel
     {
-        public string Id { get; set; }
+        public bool IsOutOfStock { get; set; }
 
-        public string Name { get; set; }
+        public virtual ImageModel Image { get; set; }
+
+        public virtual IEnumerable<ImageModel> AdditionalImages { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public DateTime UpdatedOn { get; set; }
     }
 }

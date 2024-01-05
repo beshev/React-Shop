@@ -28,4 +28,8 @@
     <ProjectReference Include="..\React-Shop.Services\Services\Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+
 </Project>

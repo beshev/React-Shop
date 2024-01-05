@@ -1,8 +1,8 @@
-﻿namespace Data.Entities
+﻿namespace React_Shop.Server.Models
 {
-    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
-    public class ProductEntity : EntityBase
+    public class ProductCreateApiModel
     {
         public string Name { get; set; }
 
@@ -18,9 +18,9 @@
 
         public int ImagesCount { get; set; }
 
-        public ImageEntity Image { get; set; }
+        public IFormFile Image { get; set; }
 
-        public IEnumerable<ImageEntity> AdditionalImages { get; set; }
+        public IEnumerable<IFormFile> AdditionalImages { get; set; }
 
         public IEnumerable<string> Categories { get; set; }
     }

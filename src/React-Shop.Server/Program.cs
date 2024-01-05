@@ -2,8 +2,7 @@ using Data.Models;
 using Data.Repositories;
 using FluentValidation;
 using Infrastructure.Extentions;
-using MediatR;
-using React_Shop.Server.Behaviors;
+using React_Shop.Server.Extentions;
 using Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.RegisterAutoMapper();
-builder.Services.AddValidatorsFromAssemblyContaining(typeof(ServiceCollectionExtentions), includeInternalTypes: true);
+builder.Services.AddValidatorsFromAssemblyContaining(typeof(Infrastructure.Extentions.ServiceCollectionExtentions), includeInternalTypes: true);
 builder.Services.AddMediatR(conf => conf.RegisterServicesFromAssembly(typeof(Program).Assembly));
 builder.Services.RegisterSettings<MongoDbSetting>(builder.Configuration);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();

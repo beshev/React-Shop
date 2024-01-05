@@ -1,5 +1,6 @@
 ﻿namespace React_Shop.Server.Controllers
 {
+    using AutoMapper;
     using Infrastructure.Common;
     using Infrastructure.Constants;
     using MediatR;
@@ -8,8 +9,11 @@
     public class AbstractController : ControllerBase
     {
         protected IMediator _mediator;
+        protected IMapper _mapper;
 
         public IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
+
+        public IMapper Mapper => _mapper ??= HttpContext.RequestServices.GetRequiredService<IMapper>();
 
         protected IActionResult CreateErrorResult<T>(InternalResult<T> result)
         {

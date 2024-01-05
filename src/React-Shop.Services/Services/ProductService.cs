@@ -5,6 +5,7 @@
     using Data.Repositories;
     using Infrastructure.Models;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
@@ -16,10 +17,12 @@
         private readonly IProductRepository _productRepository = productRepository;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<ProductModel> CreateAsync(ProductModel product, CancellationToken cancellationToken)
+        public async Task<ProductModel> CreateAsync(ProductCreateModel product, CancellationToken cancellationToken)
         {
             var entity = _mapper.Map<ProductEntity>(product);
             var result = await _productRepository.InsertAsync(entity, cancellationToken);
+
+            SaveImage(product.Image);
 
             return _mapper.Map<ProductModel>(result);
         }
@@ -35,6 +38,11 @@
         public async Task<int> DeleteAsync(string Id, CancellationToken cancellationToken)
         {
             return await _productRepository.DeleteManyAsync(x => x.Id.Equals(Id), cancellationToken);
+        }
+
+        private async void SaveImage(ImageCreateModel image)
+        {
+            await File.WriteAllBytesAsync(image.Url, image.Content);
         }
     }
 }

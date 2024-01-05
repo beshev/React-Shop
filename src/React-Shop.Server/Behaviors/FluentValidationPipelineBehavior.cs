@@ -21,6 +21,7 @@
                 return ValidationError<K>(request.ErrorContext.Title, ValidatiorsNotFoundErrorMessage);
             }
 
+            // TODO: Add commad handler validator
             var validationErrors = _validators
                 .Select(x => x.Validate(request))
                 .SelectMany(x => x.Errors)

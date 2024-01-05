@@ -9,7 +9,7 @@
     {
         Task<IEnumerable<ProductModel>> GetAllAsync(CancellationToken cancellationToken);
 
-        Task<ProductModel> CreateAsync(ProductModel product, CancellationToken cancellationToken);
+        Task<ProductModel> CreateAsync(ProductCreateModel product, CancellationToken cancellationToken);
 
         Task<int> DeleteAsync(string id, CancellationToken cancellationToken);
     }

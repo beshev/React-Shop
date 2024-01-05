@@ -1,6 +1,5 @@
 ﻿namespace React_Shop.Server.Controllers
 {
-    using Infrastructure.Models;
     using Microsoft.AspNetCore.Mvc;
     using React_Shop.Server.Commands;
     using React_Shop.Server.Models;
@@ -24,13 +23,9 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductApiModel product, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create(ProductCreateApiModel product, CancellationToken cancellationToken)
         {
-            // TODO: Automapper here!
-            var command = new CreateProductCommand
-            {
-                Product = new ProductModel { Name = product.Name }
-            };
+            var command = Mapper.Map<CreateProductCommand>(product);
 
             var result = await Mediator.Send(command, cancellationToken);
             if (!result.IsSuccess)
@@ -42,7 +37,7 @@
         }
 
         [HttpPatch]
-        public async Task<IActionResult> Update(ProductApiModel product, CancellationToken cancellationToken)
+        public async Task<IActionResult> Update(ProductCreateApiModel product, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
